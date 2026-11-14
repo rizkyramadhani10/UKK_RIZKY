@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@source "../views/**/*.blade.php";
+
+@theme {
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --color-brand-canvas: #FAF8F5;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-neutral: #18181B;
+  --color-brand-muted: #52525B;
+  --color-brand-subtle-text: #71717A;
+  --color-brand-line: #E7E5E0;
+  --color-brand-subtle: #F4F2EC;
+  --color-brand-accent: #EA580C;
+  --color-brand-accent-hover: #C2410C;
+}
+
+:root {
+  --brand-canvas: #FAF8F5;
+  --brand-surface: #FFFFFF;
+  --brand-neutral: #18181B;
+  --brand-muted: #52525B;
+  --brand-subtle-text: #71717A;
+  --brand-line: #E7E5E0;
+  --brand-subtle: #F4F2EC;
+  --brand-accent: #EA580C;
+  --brand-accent-hover: #C2410C;
+}
+
+* {
+  border-color: var(--brand-line);
+}
+
+body {
+  background-color: var(--brand-canvas);
+  color: var(--brand-neutral);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  color: var(--brand-neutral);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Container */
+.container-page {
+  width: min(100% - 2.5rem, 1200px);
+  margin-inline: auto;
+}
+
+/* Typography */
+.heading-2 { font-size: clamp(2rem, 3.5vw, 2.75rem); line-height: 1.12; font-weight: 700; letter-spacing: -0.025em; color: var(--brand-neutral); }
+.heading-3 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--brand-neutral); }
+
+.title-2 { font-size: 1.125rem; line-height: 1.75rem; font-weight: 600; color: var(--brand-neutral); }
+.title-3 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; color: var(--brand-neutral); }
+.title-4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; color: var(--brand-neutral); }
+
+.body-3 { font-size: 1.0625rem; line-height: 1.625rem; font-weight: 400; color: var(--brand-muted); }
+.body-6 { font-size: 0.875rem; line-height: 1.375rem; font-weight: 400; color: var(--brand-muted); }
+
+.caption-2 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; color: var(--brand-subtle-text); }
+.caption-3 { font-size: 0.75rem; line-height: 1rem; font-weight: 600; letter-spacing: 0.05em; }
+
+/* Buttons */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brand-accent);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  border: 1px solid var(--brand-accent);
+  box-shadow: 0 1px 2px rgba(234, 88, 12, 0.2);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-accent:hover {
+  background-color: var(--brand-accent-hover);
+  border-color: var(--brand-accent-hover);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.btn-accent:active {
+  transform: scale(0.98);
+}
+
+.btn-accent-sm {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brand-surface);
+  color: var(--brand-neutral);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  border: 1px solid var(--brand-line);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-outline:hover {
+  background-color: var(--brand-canvas);
+  border-color: #D4D2CD;
+  color: var(--brand-neutral);
+}
+
+.btn-outline:active {
+  transform: scale(0.98);
+}
+
+/* Surface card */
+.surface-card {
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.surface-card:hover {
+  border-color: #D4D2CD;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Rich text (Filament RichEditor output) */
+.prose {
+  color: var(--brand-muted);
+  line-height: 1.75;
+}
+
+.prose > * + * {
+  margin-top: 1.25em;
+}
+
+.prose h2 { font-size: 1.5rem; line-height: 1.3; font-weight: 700; color: var(--brand-neutral); }
+.prose h3 { font-size: 1.25rem; line-height: 1.4; font-weight: 600; color: var(--brand-neutral); }
+.prose strong { font-weight: 600; color: var(--brand-neutral); }
+.prose a { color: var(--brand-accent); text-decoration: underline; }
+.prose ul { list-style: disc; padding-left: 1.5rem; }
+.prose ol { list-style: decimal; padding-left: 1.5rem; }
+.prose li + li { margin-top: 0.5em; }
+.prose blockquote { border-left: 2px solid var(--brand-line); padding-left: 1rem; font-style: italic; }
+.prose img { border-radius: 8px; }
