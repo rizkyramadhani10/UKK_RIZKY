@@ -41,4 +41,4 @@ Panel admin digunakan untuk mengelola kategori, layanan, galeri, profil perusaha
 
 ## Keterangan
 
-Proyek ini dibuat untuk kebutuhan Uji Kompetensi Keahlian (UKK).
+Proyek ini dibuat untuk kebutuhan Uji Kompetensi Keahlian (UKK) dan guna memenuhi persyaratan dari Lembaga Sertifikasi Profesi (LSP).
